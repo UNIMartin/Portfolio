@@ -1,0 +1,281 @@
+@charset "utf-8";
+/* CSS Document */
+
+:root {
+  	--dark-red: rgb(68, 0, 0);
+  	--white: #fff;
+	--black: #000;
+  	--font-family: Nunito; 
+}
+
+/* ---- Global styling ---- */
+html {
+	background-color: var(--dark-red);
+	cursor: pointer;
+}
+
+h2 {
+	color: var(--white);
+	font-family: var(--font-family);
+	font-size: 30px;
+	text-shadow: 2px 2px var(--black);
+}
+
+p {
+	color: var(--white);
+	font-family: var(--font-family);
+	font-size: 25px;
+	text-shadow: 2px 2px var(--black);
+	margin-left: 50px;
+	margin-right: 50px;
+	font-weight: 100;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+/* ---- Header styling ---- */
+#video {
+	width: 80%;
+	height: auto;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 20px;
+}
+
+
+/* ---- Sections styling ---- */
+.expandable-section {
+	overflow: hidden;
+	position: relative;
+}
+
+.expand-button {
+	position: absolute;
+	width: 100%;
+	height: 100px;
+	color: var(--white);
+	text-shadow: 3px 3px var(--black);
+	background-color: transparent;
+	border: none;
+	font-size: 40px;
+	font-weight: 600;
+	font-family: var(--font-family);
+}
+
+article {
+	margin-top: 100px;
+	overflow: hidden;
+	max-height: 10px;
+	transition: max-height 1s linear;
+}
+
+article.expanded {
+	max-height: 10000px;
+	overflow-y: hidden;
+	
+}
+.background-image {
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: auto;
+	opacity: 0.3;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/* ---- About section ---- */
+#about-button:hover ~ #about-image {
+	opacity: 0.9;
+}
+
+
+/* ---- Programs section ---- */
+#programs-button:hover ~ #programs-image {
+	opacity: 0.9;
+}
+
+#programs-image {
+	width: 50%;
+	margin: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
+
+/* ---- Projects section ---- */
+#projects-button:hover ~ #projects-image {
+	opacity: 0.9;
+}
+
+#projects-content {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.project-image {
+	background-color: var(--black);
+	border-radius: 20px;
+	height: 200px;
+	margin: 20px;
+	opacity: 0.8;
+}
+.project-image:hover {
+	height: 220px;
+	opacity: 1;
+}
+
+#GK {
+	padding-left: 30px;
+	padding-right: 40px;
+}
+
+
+/* ---- Portraits section ---- */
+#portraits-button:hover ~ #portraits-image {
+	opacity: 0.9;
+}
+
+#portraits-content {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.portrait {
+	max-height: 200px;
+	padding: 10px;
+	border-radius: 20px;
+	opacity: 0.8;
+}
+
+.portrait:hover {
+	opacity: 1;
+}
+
+#portraits-content:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.detailView {
+	position: relative;
+	margin: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	display: none;
+}
+
+.close-button {
+	position: absolute;
+	top: 90px;
+	left: auto;
+	right: auto;
+	color: var(--black);
+	font-size: 50px;
+}
+
+
+/* ---- Comic section ---- */
+#comic-button:hover ~ #comic-image {
+	opacity: 0.9;
+}
+
+#comic-content {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.comic {
+	width: 200px;
+	padding: 10px;
+	opacity: 0.8;
+}
+
+.comic:hover {
+	opacity: 1;
+}
+
+
+/* ---- Footer ---- */
+footer {
+	text-align: center;
+}
+
+
+
+@media (max-width: 500px) {
+	#video {
+		width: 100%;
+	}
+	.expandable-section {
+		margin-bottom: 20px;
+		margin-top: 40px;
+	}
+	.expand-button {
+		font-size: 20px;
+		max-height: 50px;
+		background: #310000;
+	}
+	#about-button:hover ~ #about-image {
+	opacity: 0.5;
+	}
+	#programs-button:hover ~ #programs-image {
+	opacity: 0.5;
+	}
+	#projects-button:hover ~ #projects-image {
+	opacity: 0.5;
+	}
+	#portraits-button:hover ~ #portraits-image {
+	opacity: 0.5;
+	}
+	#comic-button:hover ~ #comic-image {
+	opacity: 0.5;
+	}
+	article {
+		margin-top: 40px;
+	}
+	h2 {
+		font-size: 20px;
+		margin-bottom: -10px;
+	}
+	p {
+		font-size: 16px;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	.background-image, #about-image, #programs-image, #portraits-image #comic-image, #projects-image{
+		height: 100%;
+		width: auto;
+		margin-left: -300px;
+	}
+	.project-image {
+		height: 120px;
+	}
+	#GK {
+		padding-left: 20px;
+		padding-right: 25px;
+	}
+	.project-image:hover {
+		height: 130px;
+	}
+	.portrait {
+		width: 100px;
+	}
+	.comic {
+		width: 140px;
+	}
+}
